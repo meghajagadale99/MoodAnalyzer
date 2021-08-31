@@ -1,31 +1,23 @@
 package com.bridgelabz;
 
-import com.bridgelabz.MoodAnalysisException;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 
 public class MoodAnalyserTest {
 
     @Test
-    public void givenMessage_WhenSad_ShouldReturnSad() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Sad Mood");
-        String mood = moodAnalyser.analyseMood();
-        Assert.assertEquals("SAD", mood);
+    public void givenMessage_WhenSad_ShouldReturn_Sad() {
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("This is a Sad Message");
+        String mood = moodAnalyzer.analyseMood();
+        Assert.assertEquals("SAD",mood);
+
     }
 
     @Test
-    public void givenMessage_WhenHappy_ShouldReturnHappy() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Happy Mood");
-        String mood = moodAnalyser.analyseMood();
-        Assert.assertEquals("HAPPY", mood);
-    }
-
-    @Test
-    public void givenNullMood_ShouldThrowException() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
-        String mood = moodAnalyser.analyseMood();
-        Assert.assertEquals("HAPPY", mood);
+    public void givenMessage_WhenNotSad_ShouldReturn_Happy() {
+        MoodAnalyser moodAnalyzer = new MoodAnalyser("This is Happy Message");
+        String mood = moodAnalyzer.analyseMood();
+        Assert.assertEquals("HAPPY",mood);
     }
 }
